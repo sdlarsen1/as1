@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">sdlarsen-HabitTracker</string>
     <string name="newHabit">New Habit</string>
+    <string name="toDo">To do:</string>
 </resources>

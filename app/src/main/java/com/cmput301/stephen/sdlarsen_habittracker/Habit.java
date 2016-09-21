@@ -22,6 +22,7 @@ public class Habit {
     }
 
     public void setTitle(String title) {
+
         this.title = title;
     }
 
@@ -34,18 +35,22 @@ public class Habit {
     }
 
     public List getDays() {
+
         return days;
     }
 
     public String getTitle() {
+
         return title;
     }
 
     public Integer getCheckIn() {
+
         return checkIn;
     }
 
     public Date getDate() {
+
         return date;
     }
 }

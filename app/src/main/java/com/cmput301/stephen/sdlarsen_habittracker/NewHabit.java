@@ -20,8 +20,22 @@ public class NewHabit extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_habit);
 
-        editMessage = (EditText) findViewById(R.id.edit_message);
-        Button saveButton = (Button) findViewById(R.id.save);
+        editMessage = (EditText) findViewById(R.id.edit_message);  // habit name
+        Button saveButton = (Button) findViewById(R.id.save);    // save button
+
+        /* Days of the week buttons */
+        Button sundayButton = (Button) findViewById(R.id.sunday);
+        Button mondayButton = (Button) findViewById(R.id.monday);
+        Button tuesdayButton = (Button) findViewById(R.id.tuesday);
+        Button wednesdayButton = (Button) findViewById(R.id.wednesday);
+        Button thursdayButton = (Button) findViewById(R.id.thursday);
+        Button fridayButton = (Button) findViewById(R.id.friday);
+        Button saturdayButton = (Button) findViewById(R.id.saturday);
+
+
+
+
+        /* On pressing save... */
         saveButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {

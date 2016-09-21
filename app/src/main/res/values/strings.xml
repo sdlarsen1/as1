@@ -2,4 +2,8 @@
     <string name="app_name">sdlarsen-HabitTracker</string>
     <string name="newHabit">New Habit</string>
     <string name="toDo">To do:</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit_message">What do you need to do?</string>
+    <string name="monday">M</string>
 </resources>

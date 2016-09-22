@@ -5,7 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    public ArrayList<Habit> habitList = new ArrayList<>();  // List of Habits
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

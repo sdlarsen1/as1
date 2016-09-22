@@ -4,6 +4,7 @@ import android.app.LauncherActivity;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by stephen on 2016-09-20.
@@ -14,9 +15,9 @@ public class Habit {
     private String title;
     private Integer checkIn;
     private Date date;
-    private List days;
+    private Set days;
 
-    public Habit(String title, List days) {
+    public Habit(String title, Set days) {
         this.title = title;
         this.date = new Date();
         this.checkIn = 0;
@@ -24,7 +25,6 @@ public class Habit {
     }
 
     public void setTitle(String title) {
-
         this.title = title;
     }
 
@@ -32,27 +32,23 @@ public class Habit {
         this.checkIn = checkIn;
     }
 
-    public void setDays(List days) {
+    public void setDays(Set days) {
         this.days = days;
     }
 
-    public List getDays() {
-
+    public Set getDays() {
         return days;
     }
 
     public String getTitle() {
-
         return title;
     }
 
     public Integer getCheckIn() {
-
         return checkIn;
     }
 
     public Date getDate() {
-
         return date;
     }
 }

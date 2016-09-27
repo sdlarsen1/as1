@@ -5,5 +5,18 @@
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="edit_message">What do you need to do?</string>
-    <string name="monday">M</string>
+    <string name="history">Recent Activity:</string>
+    <string name="created">Created on:</string>
+    <string name="repeat_on">Repeat on:</string>
+
+    <string-array name="days_array">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+
 </resources>

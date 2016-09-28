@@ -25,7 +25,7 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
 
     private static final String FILENAME = "habits.sav";
     private EditText editMessage;
-    private ArrayList<Habit> habitList;
+    private ArrayList<Habit> newHabitList;
     private ArrayList<String> daysList;
 
 
@@ -35,7 +35,7 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_habit);
 
-        habitList = (ArrayList<Habit>) getIntent().getSerializableExtra("habitList"); // retrieve habitList
+        newHabitList = (ArrayList<Habit>) getIntent().getSerializableExtra("habitList"); // retrieve habitList
 
         editMessage = (EditText) findViewById(R.id.edit_message);  // Habit name
 
@@ -50,13 +50,13 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
                 String text = editMessage.getText().toString();
 
                 Habit newHabit = new Habit(text, daysList);
-                habitList.add(newHabit);
+                newHabitList.add(newHabit);
 
                 //Save in file
                 saveInFile();
 
                 Intent intent = new Intent(NewHabit.this, MainActivity.class);
-                //intent.putExtra("habitList", habitList);
+                //intent.putExtra("newHabitList", newHabitList);
                 startActivity(intent);
 
             }
@@ -82,7 +82,7 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
         /**
          * this breaks the page..?
          */
-        /*if (selectedDays.isEmpty()) {
+        /*if (daysList.isEmpty()) {
             daysViewButton.setText("empty");
         } /*else {
             for (int y = 0; y <= selectedDays.size()-1; y++){
@@ -110,7 +110,7 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
 
             OutputStreamWriter writer = new OutputStreamWriter(fos);
             Gson gson = new Gson();
-            gson.toJson(habitList, writer);
+            gson.toJson(newHabitList, writer);
             writer.flush();
 
         } catch (FileNotFoundException e) {

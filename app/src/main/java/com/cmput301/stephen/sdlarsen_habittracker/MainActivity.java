@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         oldHabitList = (ListView) findViewById(R.id.oldHabits);  // init. display of old habits
 
-        //habitList = (ArrayList<Habit>) getIntent().getSerializableExtra("habitList"); // retrieve habitList
+        habitList = (ArrayList<Habit>) getIntent().getSerializableExtra("newHabitList"); // retrieve habitList
 
         Button newHabitButton = (Button) findViewById(R.id.newHabit);
         newHabitButton.setOnClickListener(new View.OnClickListener() {

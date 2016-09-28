@@ -18,13 +18,15 @@ import java.util.ArrayList;
 
 public class ChooseDaysDialogFragment extends DialogFragment {
 
-    public interface NoticeDialogListener {
-        void onDialogPositiveClick(DialogFragment dialog);
-        void onDialogNegativeClick(DialogFragment dialog);
+    private ArrayList selectedDays = new ArrayList();
+
+
+    public interface onSaveListener {
+        void onSaveClick(DialogFragment dialog);
     }
 
     // Use this instance of the interface to deliver action events
-    NoticeDialogListener mListener;
+    onSaveListener mListener;
 
     // Override the Fragment.onAttach() method to instantiate the NoticeDialogListener
     @Override
@@ -33,18 +35,18 @@ public class ChooseDaysDialogFragment extends DialogFragment {
         // Verify that the host activity implements the callback interface
         try {
             // Instantiate the NoticeDialogListener so we can send events to the host
-            mListener = (NoticeDialogListener) activity;
+            this.mListener = (onSaveListener) activity;
         } catch (ClassCastException e) {
             // The activity doesn't implement the interface, throw exception
             throw new ClassCastException(activity.toString()
-                    + " must implement NoticeDialogListener");
+                    + " must implement onSaveListener");
         }
     }
 
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        final ArrayList selectedDays = new ArrayList();
+        //final ArrayList selectedDays = new ArrayList();
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         builder.setTitle(R.string.repeat_on)
@@ -64,7 +66,7 @@ public class ChooseDaysDialogFragment extends DialogFragment {
         builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                mListener.onDialogPositiveClick(ChooseDaysDialogFragment.this);
+                mListener.onSaveClick(ChooseDaysDialogFragment.this);
                 // TODO on-save
             }
         });
@@ -72,11 +74,14 @@ public class ChooseDaysDialogFragment extends DialogFragment {
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialog, int id){
-                mListener.onDialogNegativeClick(ChooseDaysDialogFragment.this);
-                // TODO on-cancel
+                // save nothing, exit window
             }
         });
 
         return builder.create();
+    }
+
+    public ArrayList<String> getChoices() {
+        return selectedDays;
     }
 }

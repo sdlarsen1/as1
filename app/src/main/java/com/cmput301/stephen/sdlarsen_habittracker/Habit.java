@@ -4,8 +4,6 @@ import android.app.LauncherActivity;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import java.util.Set;
 
 /**
  * Created by stephen on 2016-09-20.

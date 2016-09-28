@@ -40,14 +40,12 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
         setContentView(R.layout.activity_new_habit);
 
         habitList = (ArrayList<Habit>) getIntent().getSerializableExtra("habitList"); // retrieve habitList
-        final TextView daysView = (TextView) findViewById(R.id.days_view);
-
 
         editMessage = (EditText) findViewById(R.id.edit_message);  // Habit name
 
         Button saveButton = (Button) findViewById(R.id.saveButton);    // Save button
-        Button cancelButton = (Button) findViewById(R.id.cancelButton);
-        TextView daysViewButton = (TextView) findViewById(days_view);
+        Button cancelButton = (Button) findViewById(R.id.cancelButton);  // Cancel Button
+        TextView daysViewButton = (TextView) findViewById(days_view);  // Initialize view of selected days
 
         /* On pressing save... */
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -85,9 +83,12 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
             }
         });
 
+        /**
+         * this breaks the page..?
+         */
         /*if (selectedDays.isEmpty()) {
-            daysView.setText("empty");
-        } else {
+            daysViewButton.setText("empty");
+        } /*else {
             for (int y = 0; y <= selectedDays.size()-1; y++){
                 daysView.setText(selectedDays.get(y));
             }

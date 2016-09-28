@@ -8,6 +8,9 @@
     <string name="history">Recent Activity:</string>
     <string name="created">Created on:</string>
     <string name="repeat_on">Repeat on:</string>
+    <string name="completed">Habit Completed</string>
+    <string name="delete">Delete Habit</string>
+    <string name="clear">Clear History</string>
 
     <string-array name="days_array">
         <item>Sunday</item>

@@ -1,11 +1,7 @@
 package com.cmput301.stephen.sdlarsen_habittracker;
 
-import android.app.Activity;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -30,7 +26,7 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
     private static final String FILENAME = "habits.sav";
     private EditText editMessage;
     private ArrayList<Habit> habitList;
-    private ArrayList<String> selectedDays;
+    private ArrayList<String> daysList;
 
 
 
@@ -53,14 +49,14 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
                 setResult(RESULT_OK);
                 String text = editMessage.getText().toString();
 
-                //Habit newHabit = new Habit(text, days);
-                Habit newHabit = new Habit(text);
+                Habit newHabit = new Habit(text, daysList);
                 habitList.add(newHabit);
 
                 //Save in file
                 saveInFile();
 
                 Intent intent = new Intent(NewHabit.this, MainActivity.class);
+                //intent.putExtra("habitList", habitList);
                 startActivity(intent);
 
             }
@@ -103,8 +99,8 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
 
 
     @Override
-    public void onSaveClick(DialogFragment dialog) {
-        //
+    public void onSaveClick(ArrayList selectedDays) {
+        daysList = selectedDays;   // need to make sure it returns proper strings
     }
 
 

@@ -40,24 +40,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        oldHabitList = (ListView) findViewById(R.id.oldHabits);  // init. display of old habits
+
+        //habitList = (ArrayList<Habit>) getIntent().getSerializableExtra("habitList"); // retrieve habitList
+
         Button newHabitButton = (Button) findViewById(R.id.newHabit);
         newHabitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                setResult(RESULT_OK);
                 Intent intent = new Intent(MainActivity.this, NewHabit.class);
                 intent.putExtra("habitList", habitList);
                 startActivity(intent);
             }
         });
+
+
     }
 
-    /*@Override
+    @Override
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
         habitAdapter = new ArrayAdapter<Habit>(this,
                 R.layout.list_item, habitList);
         oldHabitList.setAdapter(habitAdapter);
-    }*/
+    }
 
     private void loadFromFile() {
         ArrayList<Habit> habits = new ArrayList<Habit>();

@@ -18,11 +18,11 @@ import java.util.ArrayList;
 
 public class ChooseDaysDialogFragment extends DialogFragment {
 
-    private ArrayList selectedDays = new ArrayList();
+    private ArrayList selectedDays = new ArrayList();  // Needs to be an array of strings, throws error @which
 
 
     public interface onSaveListener {
-        void onSaveClick(DialogFragment dialog);
+        void onSaveClick(ArrayList selectedDays);
     }
 
     // Use this instance of the interface to deliver action events
@@ -46,7 +46,9 @@ public class ChooseDaysDialogFragment extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
         //final ArrayList selectedDays = new ArrayList();
+
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         builder.setTitle(R.string.repeat_on)
@@ -66,7 +68,7 @@ public class ChooseDaysDialogFragment extends DialogFragment {
         builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                mListener.onSaveClick(ChooseDaysDialogFragment.this);
+                mListener.onSaveClick(selectedDays);
                 // TODO on-save
             }
         });
@@ -79,9 +81,5 @@ public class ChooseDaysDialogFragment extends DialogFragment {
         });
 
         return builder.create();
-    }
-
-    public ArrayList<String> getChoices() {
-        return selectedDays;
     }
 }

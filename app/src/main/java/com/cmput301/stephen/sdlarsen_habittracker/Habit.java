@@ -12,21 +12,18 @@ import java.util.Date;
 public class Habit {
 
     private String title;
-    private Integer checkIn;
     private Date date;
     private ArrayList days;
 
     public Habit(String title, ArrayList days) {
         this.title = title;
         this.date = new Date();
-        this.checkIn = 0;
         this.days = days;
     }
 
     public Habit(String title) {
         this.title = title;
         this.date = new Date();
-        this.checkIn = 0;
         this.days.add("");
     }
 
@@ -34,9 +31,6 @@ public class Habit {
         this.title = title;
     }
 
-    public void setCheckIn(Integer checkIn) {
-        this.checkIn = checkIn;
-    }
 
     public void setDays(ArrayList days) {
         this.days = days;
@@ -50,9 +44,6 @@ public class Habit {
         return title;
     }
 
-    public Integer getCheckIn() {
-        return checkIn;
-    }
 
     public Date getDate() {
         return date;

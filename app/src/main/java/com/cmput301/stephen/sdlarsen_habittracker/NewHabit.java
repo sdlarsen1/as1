@@ -1,6 +1,7 @@
 package com.cmput301.stephen.sdlarsen_habittracker;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,11 +12,17 @@ import android.widget.TextView;
 
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.Serializable;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 import static com.cmput301.stephen.sdlarsen_habittracker.R.id.days_view;
@@ -25,7 +32,7 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
 
     private static final String FILENAME = "habits.sav";
     private EditText editMessage;
-    private ArrayList<Habit> newHabitList;
+    private ArrayList<Habit> habitList = new ArrayList<Habit>();
     private ArrayList<String> daysList;
 
 
@@ -35,28 +42,26 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_habit);
 
-        newHabitList = (ArrayList<Habit>) getIntent().getSerializableExtra("habitList"); // retrieve habitList
 
         editMessage = (EditText) findViewById(R.id.edit_message);  // Habit name
-
         Button saveButton = (Button) findViewById(R.id.saveButton);    // Save button
         Button cancelButton = (Button) findViewById(R.id.cancelButton);  // Cancel Button
-        TextView daysViewButton = (TextView) findViewById(days_view);  // Initialize view of selected days
+        TextView daysView = (TextView) findViewById(days_view);  // Initialize view of selected days
 
         /* On pressing save... */
         saveButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
                 String text = editMessage.getText().toString();
-
                 Habit newHabit = new Habit(text, daysList);
-                newHabitList.add(newHabit);
 
-                //Save in file
+                loadFromFile();
+
+                habitList.add(newHabit);
+
                 saveInFile();
 
                 Intent intent = new Intent(NewHabit.this, MainActivity.class);
-                //intent.putExtra("newHabitList", newHabitList);
                 startActivity(intent);
 
             }
@@ -72,23 +77,11 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
         });
 
         /* On choosing days... */
-        daysViewButton.setOnClickListener(new View.OnClickListener() {
+        daysView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //TODO bring up dialog
                 showChooseDaysDialog();
             }
         });
-
-        /**
-         * this breaks the page..?
-         */
-        /*if (daysList.isEmpty()) {
-            daysViewButton.setText("empty");
-        } else {
-            for (int y = 0; y <= daysList.size()-1; y++){
-                daysViewButton.setText(daysList.get(y));
-            }
-        }*/
 
     }
 
@@ -104,13 +97,34 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
     }
 
 
+    private void loadFromFile() {
+        try {
+            FileInputStream fis = openFileInput(FILENAME);
+            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+
+            Gson gson = new Gson();
+
+            // Code taken from http://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylistt
+            // on September 22, 2016
+            Type listType = new TypeToken<ArrayList<Habit>>(){}.getType();
+            habitList = gson.fromJson(in, listType);
+
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            habitList = new ArrayList<Habit>();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException();
+        }
+    }
+
     private void saveInFile() {
         try {
             FileOutputStream fos = openFileOutput(FILENAME, 0);
 
             OutputStreamWriter writer = new OutputStreamWriter(fos);
             Gson gson = new Gson();
-            gson.toJson(newHabitList, writer);
+            gson.toJson(habitList, writer);
             writer.flush();
 
         } catch (FileNotFoundException e) {

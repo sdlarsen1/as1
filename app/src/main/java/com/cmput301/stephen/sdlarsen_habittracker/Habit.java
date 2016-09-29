@@ -13,12 +13,10 @@ public class Habit {
     private Date date;
     private Integer checkIns;
     private ArrayList<String> days;
-    private Boolean isComplete;
 
     public Habit(String title, ArrayList days) {
         this.title = title;
         this.date = new Date();
-        this.isComplete = Boolean.FALSE;
         this.checkIns = 0;
         this.days = days;
     }
@@ -34,14 +32,6 @@ public class Habit {
 
     public void setCheckIns(Integer checkIns) {
         this.checkIns = checkIns;
-    }
-
-    public void setComplete() {
-        isComplete = Boolean.TRUE;
-    }
-
-    public Boolean getComplete() {
-        return isComplete;
     }
 
     public Integer getCheckIns() {

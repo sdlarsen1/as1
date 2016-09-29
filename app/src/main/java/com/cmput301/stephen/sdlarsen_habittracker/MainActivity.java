@@ -30,7 +30,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private static final String FILENAME = "habits.sav";
-    private ArrayList<Habit> habitList = new ArrayList<>();  // List of Habits
+    private ArrayList<Habit> habitList = new ArrayList<Habit>(); // List of Habits
     private ArrayAdapter<Habit> habitAdapter;
     private ListView oldHabitList;
 
@@ -42,15 +42,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         oldHabitList = (ListView) findViewById(R.id.oldHabits);  // init. display of old habits
-
-        //habitList = (ArrayList<Habit>) getIntent().getSerializableExtra("newHabitList"); // retrieve habitList
-
         Button newHabitButton = (Button) findViewById(R.id.newHabit);
+
         newHabitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
                 Intent intent = new Intent(MainActivity.this, NewHabit.class);
-                intent.putExtra("habitList", habitList);
                 startActivity(intent);
             }
         });
@@ -59,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, HabitPage.class);
-                // toss in the selected habit
+                // TODO pass selected habit
+                intent.putExtra("index", position);
                 startActivity(intent);
             }
         });
@@ -71,17 +69,15 @@ public class MainActivity extends AppCompatActivity {
         // TODO Auto-generated method stub
         super.onStart();
 
-        //habitList = (ArrayList<Habit>) getIntent().getSerializableExtra("newHabitList"); // retrieve habitList
-
+        loadFromFile();
 
         habitAdapter = new ArrayAdapter<Habit>(this,
                 R.layout.list_item, habitList);
-        oldHabitList.setAdapter(habitAdapter);
+        //oldHabitList.setAdapter(habitAdapter);
+        habitAdapter.notifyDataSetChanged();
     }
 
-
     private void loadFromFile() {
-        ArrayList<Habit> habits = new ArrayList<Habit>();
         try {
             FileInputStream fis = openFileInput(FILENAME);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
@@ -95,28 +91,11 @@ public class MainActivity extends AppCompatActivity {
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
-            throw new RuntimeException();
+            habitList = new ArrayList<Habit>();  // create new file
         } catch (IOException e) {
             // TODO Auto-generated catch block
             throw new RuntimeException();
         }
     }
 
-    private void saveInFile() {
-        try {
-            FileOutputStream fos = openFileOutput(FILENAME, 0);
-
-            OutputStreamWriter writer = new OutputStreamWriter(fos);
-            Gson gson = new Gson();
-            gson.toJson(habitList, writer);
-            writer.flush();
-
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            throw new RuntimeException();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            throw new RuntimeException();
-        }
-    }
 }

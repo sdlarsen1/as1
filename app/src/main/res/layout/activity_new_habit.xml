@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/days_view"
         android:layout_weight="0.04"
+        android:textSize="10pt"
         android:text="Repeat on:"/>
 
     <Button

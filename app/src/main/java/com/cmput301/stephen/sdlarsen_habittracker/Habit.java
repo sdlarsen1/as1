@@ -1,7 +1,5 @@
 package com.cmput301.stephen.sdlarsen_habittracker;
 
-import android.app.LauncherActivity;
-
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -13,18 +11,16 @@ public class Habit {
 
     private String title;
     private Date date;
-    private ArrayList days;
+    private Integer checkIns;
+    private ArrayList<String> days;
+    private Boolean isComplete;
 
     public Habit(String title, ArrayList days) {
         this.title = title;
         this.date = new Date();
+        this.isComplete = Boolean.FALSE;
+        this.checkIns = 0;
         this.days = days;
-    }
-
-    public Habit(String title) {
-        this.title = title;
-        this.date = new Date();
-        this.days.add("");
     }
 
     public void setTitle(String title) {
@@ -36,6 +32,22 @@ public class Habit {
         this.days = days;
     }
 
+    public void setCheckIns(Integer checkIns) {
+        this.checkIns = checkIns;
+    }
+
+    public void setComplete() {
+        isComplete = Boolean.TRUE;
+    }
+
+    public Boolean getComplete() {
+        return isComplete;
+    }
+
+    public Integer getCheckIns() {
+        return checkIns;
+    }
+
     public ArrayList getDays() {
         return days;
     }
@@ -43,7 +55,6 @@ public class Habit {
     public String getTitle() {
         return title;
     }
-
 
     public Date getDate() {
         return date;

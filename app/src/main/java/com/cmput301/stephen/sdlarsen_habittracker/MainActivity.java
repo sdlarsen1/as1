@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         oldHabitList = (ListView) findViewById(R.id.oldHabits);  // init. display of old habits
 
-        habitList = (ArrayList<Habit>) getIntent().getSerializableExtra("newHabitList"); // retrieve habitList
+        //habitList = (ArrayList<Habit>) getIntent().getSerializableExtra("newHabitList"); // retrieve habitList
 
         Button newHabitButton = (Button) findViewById(R.id.newHabit);
         newHabitButton.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        oldHabitList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, HabitPage.class);
+                // toss in the selected habit
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -61,10 +70,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
+
+        //habitList = (ArrayList<Habit>) getIntent().getSerializableExtra("newHabitList"); // retrieve habitList
+
+
         habitAdapter = new ArrayAdapter<Habit>(this,
                 R.layout.list_item, habitList);
         oldHabitList.setAdapter(habitAdapter);
     }
+
 
     private void loadFromFile() {
         ArrayList<Habit> habits = new ArrayList<Habit>();

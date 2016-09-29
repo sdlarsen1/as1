@@ -84,9 +84,9 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
          */
         /*if (daysList.isEmpty()) {
             daysViewButton.setText("empty");
-        } /*else {
-            for (int y = 0; y <= selectedDays.size()-1; y++){
-                daysView.setText(selectedDays.get(y));
+        } else {
+            for (int y = 0; y <= daysList.size()-1; y++){
+                daysViewButton.setText(daysList.get(y));
             }
         }*/
 

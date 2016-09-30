@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         habitAdapter = new ArrayAdapter<Habit>(this,
                 R.layout.list_item, habitList);
-        //oldHabitList.setAdapter(habitAdapter);
+        oldHabitList.setAdapter(habitAdapter);
         habitAdapter.notifyDataSetChanged();
     }
 

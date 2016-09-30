@@ -8,6 +8,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by stephen on 2016-09-26.
@@ -18,8 +19,7 @@ import java.util.ArrayList;
 
 public class ChooseDaysDialogFragment extends DialogFragment {
 
-    private ArrayList selectedDays = new ArrayList();  // Needs to be an array of strings, throws error @which
-
+    private ArrayList selectedDays = new ArrayList();
 
     public interface onSaveListener {
         void onSaveClick(ArrayList selectedDays);
@@ -69,7 +69,6 @@ public class ChooseDaysDialogFragment extends DialogFragment {
             @Override
             public void onClick(DialogInterface dialog, int id) {
                 mListener.onSaveClick(selectedDays);
-                // TODO on-save
             }
         });
 

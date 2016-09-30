@@ -32,8 +32,8 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
 
     private static final String FILENAME = "habits.sav";
     private EditText editMessage;
-    private ArrayList<Habit> habitList = new ArrayList<Habit>();
-    private ArrayList<String> daysList;
+    private ArrayList<Habit> habitList;
+    private ArrayList<String> daysList = new ArrayList<String>();
 
 
 
@@ -56,8 +56,11 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
                 Habit newHabit = new Habit(text, daysList);
 
                 loadFromFile();
-
-                habitList.add(newHabit);
+                if (habitList == null){
+                    habitList = new ArrayList<Habit>();
+                } else {
+                    habitList.add(newHabit);
+                }
 
                 saveInFile();
 

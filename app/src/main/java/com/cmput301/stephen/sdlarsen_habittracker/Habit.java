@@ -14,7 +14,7 @@ public class Habit {
     private Integer checkIns;
     private ArrayList<String> days;
 
-    public Habit(String title, ArrayList days) {
+    public Habit(String title, ArrayList<String> days) {
         this.title = title;
         this.date = new Date();
         this.checkIns = 0;
@@ -48,5 +48,10 @@ public class Habit {
 
     public Date getDate() {
         return date;
+    }
+
+    @Override
+    public String toString(){
+        return title;
     }
 }

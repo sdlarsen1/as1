@@ -45,6 +45,7 @@ public class HabitPage extends AppCompatActivity {
 
         TextView habitName = (TextView) findViewById(R.id.habit_name);
         TextView habitDate = (TextView) findViewById(R.id.created_on);
+        TextView habitComplete = (TextView) findViewById(R.id.complete);
         ListView historyView = (ListView) findViewById(R.id.oldHabits);
 
         Button completedButton = (Button) findViewById(R.id.completedButton);
@@ -53,21 +54,29 @@ public class HabitPage extends AppCompatActivity {
 
         habitName.setText(displayHabit.getTitle());  // show title
 
-        String dateString = formatDate();
-
         /**
          * Code taken from http://stackoverflow.com/questions/15541266/displaying-static-and-dynamic-data-in-textview-in-android
          * on Sept. 29, 2016. Written by Chirag Raval.
          */
+        String dateString = formatDate();
         SpannableString spanDate = new SpannableString(dateString);
         spanDate.setSpan(new StyleSpan(Typeface.BOLD), 0, spanDate.length(), 0);
         habitDate.append(" ");
         habitDate.append(spanDate);
 
+        String checkInString = Integer.toString(displayHabit.getCheckIns());
+        SpannableString spanCheckIn = new SpannableString(checkInString);
+        habitComplete.append(" ");
+        habitComplete.append(spanCheckIn);
+        habitComplete.append(" time(s).");
+
+
         /* On completing habit... */
         completedButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // TODO
+                int checkIns = displayHabit.getCheckIns();
+                displayHabit.setCheckIns(checkIns+1);
             }
         });
 

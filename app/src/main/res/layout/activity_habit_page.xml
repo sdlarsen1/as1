@@ -20,6 +20,13 @@
         android:text="@string/created"/>
 
     <TextView
+        android:id="@+id/complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10pt"
+        android:text="@string/completed"/>
+
+    <TextView
         android:id="@+id/history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/completed"/>
+            android:text="@string/done"/>
 
         <Button
             android:id="@+id/clearButton"
@@ -54,7 +61,7 @@
 
         <Button
             android:id="@+id/deleteButton"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/delete"/>

@@ -13,12 +13,14 @@ public class Habit {
     private Date date;
     private Integer checkIns;
     private ArrayList<String> days;
+    private Boolean isComplete;
 
     public Habit(String title, ArrayList<String> days) {
         this.title = title;
         this.date = new Date();
         this.checkIns = 0;
         this.days = days;
+        this.isComplete = Boolean.FALSE;
     }
 
     public void setTitle(String title) {
@@ -54,4 +56,13 @@ public class Habit {
     public String toString(){
         return title;
     }
+
+    public void setIsComplete() {
+        this.isComplete = Boolean.TRUE;
+    }
+
+    public Boolean getIsComplete() {
+        return isComplete;
+    }
+
 }

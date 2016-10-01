@@ -30,8 +30,9 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private static final String FILENAME = "habits.sav";
-    private ArrayList<Habit> habitList = new ArrayList<Habit>(); // List of Habits
+    private ArrayList<Habit> habitList = new ArrayList<>(); // List of Habits
     private ArrayAdapter<Habit> habitAdapter;
+    private ArrayList<Habit> completedHabitList = new ArrayList<>();
     private ListView oldHabitList;
 
 
@@ -86,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
 
             // Code taken from http://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylistt
             // on September 22, 2016
-            Type listType = new TypeToken<ArrayList<Habit>>(){}.getType();
+//            Type listType = new TypeToken<ArrayList<Habit>>(){}.getType();
+            Type listType = new TypeToken<ArrayList<IncompleteHabit>>(){}.getType();
             habitList = gson.fromJson(in, listType);
 
         } catch (FileNotFoundException e) {

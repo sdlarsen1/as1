@@ -1,6 +1,7 @@
 package com.cmput301.stephen.sdlarsen_habittracker;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by stephen on 2016-09-29.
@@ -12,5 +13,7 @@ public class CompletedHabit extends Habit {
         super(title, days);
     }
 
-
+    public Boolean isComplete() {
+        return Boolean.TRUE;
+    }
 }

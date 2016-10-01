@@ -53,7 +53,7 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
             public void onClick(View v) {
                 setResult(RESULT_OK);
                 String text = editMessage.getText().toString();
-                Habit newHabit = new Habit(text, daysList);
+                Habit newHabit = new IncompleteHabit(text, daysList);
 
                 loadFromFile();
                 if (habitList == null){
@@ -65,6 +65,7 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
                 saveInFile();
 
                 Intent intent = new Intent(NewHabit.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 
             }
@@ -75,7 +76,9 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
         cancelButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(NewHabit.this, MainActivity.class);
+                //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -109,7 +112,7 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
 
             // Code taken from http://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylistt
             // on September 22, 2016
-            Type listType = new TypeToken<ArrayList<Habit>>(){}.getType();
+            Type listType = new TypeToken<ArrayList<IncompleteHabit>>(){}.getType();
             habitList = gson.fromJson(in, listType);
 
         } catch (FileNotFoundException e) {

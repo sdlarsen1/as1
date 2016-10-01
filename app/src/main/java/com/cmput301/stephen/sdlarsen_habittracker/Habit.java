@@ -7,20 +7,19 @@ import java.util.Date;
  * Created by stephen on 2016-09-20.
  */
 
-public class Habit {
+public abstract class Habit {
 
     private String title;
     private Date date;
     private Integer checkIns;
     private ArrayList<String> days;
-    private Boolean isComplete;
+    private ArrayList<Date> historyList;
 
     public Habit(String title, ArrayList<String> days) {
         this.title = title;
         this.date = new Date();
         this.checkIns = 0;
         this.days = days;
-        this.isComplete = Boolean.FALSE;
     }
 
     public void setTitle(String title) {
@@ -52,17 +51,19 @@ public class Habit {
         return date;
     }
 
+    public void setDate(Date theDate) {
+        this.date = theDate;
+    }
+
     @Override
     public String toString(){
         return title;
     }
 
-    public void setIsComplete() {
-        this.isComplete = Boolean.TRUE;
+    public void addToHistory() {
+        historyList.add(new Date());
     }
 
-    public Boolean getIsComplete() {
-        return isComplete;
-    }
+    public abstract Boolean isComplete();
 
 }

@@ -38,11 +38,6 @@ public class HabitPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_habit_page);
 
-        loadFromFile();
-        int index = (int) getIntent().getSerializableExtra("index"); // retrieve habit index
-        displayHabit = habitList.get(index);  // retrieve habit
-
-
         TextView habitName = (TextView) findViewById(R.id.habit_name);
         TextView habitDate = (TextView) findViewById(R.id.created_on);
         TextView habitComplete = (TextView) findViewById(R.id.complete);
@@ -52,13 +47,26 @@ public class HabitPage extends AppCompatActivity {
         Button clearButton = (Button) findViewById(R.id.clearButton);
         Button deleteButton = (Button) findViewById(R.id.deleteButton);
 
+
+        loadFromFile();
+
+        int index = (int) getIntent().getSerializableExtra("index"); // retrieve habit index
+        //displayHabit = habitList.get(index);  // retrieve habit
+        if (habitList.get(index).isComplete()) {
+            CompletedHabit temp = (CompletedHabit) habitList.get(index);
+            displayHabit = temp;
+        } else {
+            IncompleteHabit temp = (IncompleteHabit) habitList.get(index);
+            displayHabit = temp;
+        }
+
         habitName.setText(displayHabit.getTitle());  // show title
 
         /**
          * Code taken from http://stackoverflow.com/questions/15541266/displaying-static-and-dynamic-data-in-textview-in-android
          * on Sept. 29, 2016. Written by Chirag Raval.
          */
-        String dateString = formatDate();
+        final String dateString = formatDate();
         SpannableString spanDate = new SpannableString(dateString);
         spanDate.setSpan(new StyleSpan(Typeface.BOLD), 0, spanDate.length(), 0);
         habitDate.append(" ");
@@ -75,8 +83,20 @@ public class HabitPage extends AppCompatActivity {
         completedButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // TODO
-                int checkIns = displayHabit.getCheckIns();
-                displayHabit.setCheckIns(checkIns+1);
+                if (displayHabit.isComplete()) {
+                    //
+                } else {
+                    CompletedHabit temp = makeNewCompleted(displayHabit);
+                    habitList.remove(displayHabit);
+                    displayHabit = temp;
+                    habitList.add(displayHabit);
+
+                    displayHabit.setCheckIns(displayHabit.getCheckIns()+1);
+                    displayHabit.addToHistory();
+
+                    saveInFile();
+                    recreate();
+                }
             }
         });
 
@@ -93,6 +113,7 @@ public class HabitPage extends AppCompatActivity {
                 habitList.remove(displayHabit);
                 saveInFile();
                 Intent intent = new Intent(HabitPage.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
@@ -108,7 +129,7 @@ public class HabitPage extends AppCompatActivity {
 
             // Code taken from http://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylistt
             // on September 22, 2016
-            Type listType = new TypeToken<ArrayList<Habit>>(){}.getType();
+            Type listType = new TypeToken<ArrayList<IncompleteHabit>>(){}.getType();
             habitList = gson.fromJson(in, listType);
 
         } catch (FileNotFoundException e) {
@@ -143,5 +164,11 @@ public class HabitPage extends AppCompatActivity {
         Date theDate = displayHabit.getDate();
         String dateString = df.format(theDate);
         return dateString;
+    }
+
+    public CompletedHabit makeNewCompleted(Habit notComplete) {
+        CompletedHabit completedHabit = new CompletedHabit(notComplete.getTitle(),notComplete.getDays());
+        completedHabit.setDate(notComplete.getDate());
+        return completedHabit;
     }
 }

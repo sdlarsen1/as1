@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String FILENAME = "habits.sav";
     private ArrayList<Habit> habitList = new ArrayList<>(); // List of Habits
     private ArrayAdapter<Habit> habitAdapter;
-    private ArrayList<Habit> completedHabitList = new ArrayList<>();
     private ListView oldHabitList;
 
 

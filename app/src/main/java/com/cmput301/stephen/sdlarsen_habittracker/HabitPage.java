@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.StyleSpan;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -32,7 +33,8 @@ public class HabitPage extends AppCompatActivity {
     private static final String FILENAME = "habits.sav";
     private Habit displayHabit;
     private ArrayList<Habit> habitList;
-    private ArrayList<CompletedHabit> completedList;
+    private ArrayAdapter<Habit> habitAdapter;
+    private ListView historyView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,7 @@ public class HabitPage extends AppCompatActivity {
         TextView habitDate = (TextView) findViewById(R.id.created_on);
         TextView habitDays = (TextView) findViewById(R.id.repeat_on);
         TextView habitComplete = (TextView) findViewById(R.id.complete);
-        ListView historyView = (ListView) findViewById(R.id.oldHabits);
+        historyView = (ListView) findViewById(R.id.habit_history);
 
         Button completedButton = (Button) findViewById(R.id.completedButton);
         Button clearButton = (Button) findViewById(R.id.clearButton);
@@ -88,7 +90,7 @@ public class HabitPage extends AppCompatActivity {
                 if (displayHabit.isComplete()) {
                     // TODO
                 } else {
-                    CompletedHabit temp = makeNewCompleted(displayHabit);
+                    Habit temp = makeNewCompleted(displayHabit);   // Make new CompletedHabit
                     habitList.remove(displayHabit);
                     displayHabit = temp;
                     habitList.add(displayHabit);
@@ -97,6 +99,7 @@ public class HabitPage extends AppCompatActivity {
                     displayHabit.addToHistory();
 
                     saveInFile();
+                    habitAdapter.notifyDataSetChanged();
                     recreate();
                 }
             }
@@ -120,6 +123,15 @@ public class HabitPage extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        habitAdapter = new ArrayAdapter<Habit>(this,
+                R.layout.list_item, displayHabit.getHistory());
+        historyView.setAdapter(habitAdapter);
+        //habitAdapter.notifyDataSetChanged();
     }
 
     private void loadFromFile() {
@@ -169,8 +181,8 @@ public class HabitPage extends AppCompatActivity {
         return dateString;
     }
 
-    public CompletedHabit makeNewCompleted(Habit notComplete) {
-        CompletedHabit completedHabit = new CompletedHabit(notComplete.getTitle(),notComplete.getDaysList());
+    public Habit makeNewCompleted(Habit notComplete) {
+        Habit completedHabit = new CompletedHabit(notComplete.getTitle(),notComplete.getDaysList());
         completedHabit.setDate(notComplete.getDate());
         return completedHabit;
     }
@@ -181,7 +193,7 @@ public class HabitPage extends AppCompatActivity {
             SpannableString spanDay = new SpannableString(day);
             habitDays.append(" ");
             habitDays.append(spanDay);
-            habitDays.append(", ");
+            habitDays.append(" ");
         }
     }
 }

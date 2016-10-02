@@ -1,5 +1,7 @@
 package com.cmput301.stephen.sdlarsen_habittracker;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -13,19 +15,19 @@ public abstract class Habit {
     private Date date;
     private Integer checkIns;
     private ArrayList<String> days;
-    private ArrayList<Date> historyList;
+    private ArrayList<String> historyList;
 
     public Habit(String title, ArrayList<String> days) {
         this.title = title;
         this.date = new Date();
         this.checkIns = 0;
         this.days = days;
+        this.historyList = new ArrayList<>(); // eliminated the if/else in addToHistory
     }
 
     public void setTitle(String title) {
         this.title = title;
     }
-
 
     public void setDays(ArrayList days) {
         this.days = days;
@@ -69,7 +71,13 @@ public abstract class Habit {
 
     public void addToHistory() {
         Date theDate = new Date();
-        historyList.add(theDate);
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = df.format(theDate);
+        historyList.add(dateString);
+    }
+
+    public ArrayList getHistory() {
+        return historyList;
     }
 
     public abstract Boolean isComplete();

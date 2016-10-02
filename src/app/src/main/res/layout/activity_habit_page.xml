@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/habit_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15pt"
+        android:text="Habit Name"/>
+
+    <TextView
+        android:id="@+id/created_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10pt"
+        android:text="@string/created"/>
+
+    <TextView
+        android:id="@+id/repeat_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10pt"
+        android:text="@string/repeat_on"/>
+
+    <TextView
+        android:id="@+id/complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10pt"
+        android:text="@string/completed"/>
+
+    <TextView
+        android:id="@+id/history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10pt"
+        android:text="@string/history"/>
+
+    <ListView
+        android:id="@+id/habit_history"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/completedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/done"/>
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/clear" />
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/delete"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

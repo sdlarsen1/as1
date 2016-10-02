@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">sdlarsen-HabitTracker</string>
+    <string name="newHabit">New Habit</string>
+    <string name="toDo">To do:</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit_message">What do you need to do?</string>
+    <string name="history">History:</string>
+    <string name="created">Created on:</string>
+    <string name="repeat_on">History:</string>
+    <string name="completed">Habit completed</string>
+    <string name="done">Habit Done</string>
+    <string name="delete">Delete Habit</string>
+    <string name="clear">Clear History</string>
+
+    <string-array name="days_array">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+
+</resources>

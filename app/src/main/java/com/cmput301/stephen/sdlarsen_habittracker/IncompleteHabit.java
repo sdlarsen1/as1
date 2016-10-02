@@ -12,6 +12,7 @@ public class IncompleteHabit extends Habit {
         super(title, days);
     }
 
+    @Override
     public Boolean isComplete() {
         return Boolean.FALSE;
     }

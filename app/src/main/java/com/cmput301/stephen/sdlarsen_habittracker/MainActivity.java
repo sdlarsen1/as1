@@ -56,9 +56,10 @@ public class MainActivity extends AppCompatActivity {
         oldHabitList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Boolean complete = Boolean.FALSE;
                 Intent intent = new Intent(MainActivity.this, HabitPage.class);
-                // TODO pass selected habit
                 intent.putExtra("index", position);
+                intent.putExtra("complete", complete);
                 startActivity(intent);
             }
         });

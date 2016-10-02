@@ -20,6 +20,13 @@
         android:text="@string/created"/>
 
     <TextView
+        android:id="@+id/repeat_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10pt"
+        android:text="@string/repeat_on"/>
+
+    <TextView
         android:id="@+id/complete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

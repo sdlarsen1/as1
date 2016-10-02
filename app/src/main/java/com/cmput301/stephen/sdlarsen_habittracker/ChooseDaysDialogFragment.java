@@ -48,6 +48,8 @@ public class ChooseDaysDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         //final ArrayList selectedDays = new ArrayList();
+        final ArrayList<String> days = new ArrayList<>();
+        days.addAll(Arrays.asList("Sun","Mon","Tue","Wed","Thu","Fri","Sat"));
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
@@ -58,9 +60,9 @@ public class ChooseDaysDialogFragment extends DialogFragment {
                             public void onClick(DialogInterface dialog, int which,
                                                 boolean isChecked){
                                 if (isChecked){
-                                    selectedDays.add(which);
-                                } else if (selectedDays.contains(which)){
-                                    selectedDays.remove(Integer.valueOf(which));
+                                    selectedDays.add(days.get(which));
+                                } else if (selectedDays.contains(days.get(which))){
+                                    selectedDays.remove(days.get(which));
                                 }
                             }
                         });

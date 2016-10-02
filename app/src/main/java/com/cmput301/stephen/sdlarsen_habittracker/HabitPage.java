@@ -32,6 +32,7 @@ public class HabitPage extends AppCompatActivity {
     private static final String FILENAME = "habits.sav";
     private Habit displayHabit;
     private ArrayList<Habit> habitList;
+    private ArrayList<CompletedHabit> completedList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class HabitPage extends AppCompatActivity {
 
         TextView habitName = (TextView) findViewById(R.id.habit_name);
         TextView habitDate = (TextView) findViewById(R.id.created_on);
+        TextView habitDays = (TextView) findViewById(R.id.repeat_on);
         TextView habitComplete = (TextView) findViewById(R.id.complete);
         ListView historyView = (ListView) findViewById(R.id.oldHabits);
 
@@ -51,14 +53,13 @@ public class HabitPage extends AppCompatActivity {
         loadFromFile();
 
         int index = (int) getIntent().getSerializableExtra("index"); // retrieve habit index
-        //displayHabit = habitList.get(index);  // retrieve habit
-        if (habitList.get(index).isComplete()) {
-            CompletedHabit temp = (CompletedHabit) habitList.get(index);
-            displayHabit = temp;
+        Boolean complete = (Boolean) getIntent().getSerializableExtra("complete");
+        if (!complete) {
+            displayHabit = habitList.get(index);
         } else {
-            IncompleteHabit temp = (IncompleteHabit) habitList.get(index);
-            displayHabit = temp;
+            // TODO get habit from completedList
         }
+
 
         habitName.setText(displayHabit.getTitle());  // show title
 
@@ -72,6 +73,8 @@ public class HabitPage extends AppCompatActivity {
         habitDate.append(" ");
         habitDate.append(spanDate);
 
+        displayDays(habitDays);
+
         String checkInString = Integer.toString(displayHabit.getCheckIns());
         SpannableString spanCheckIn = new SpannableString(checkInString);
         habitComplete.append(" ");
@@ -82,9 +85,8 @@ public class HabitPage extends AppCompatActivity {
         /* On completing habit... */
         completedButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // TODO
                 if (displayHabit.isComplete()) {
-                    //
+                    // TODO
                 } else {
                     CompletedHabit temp = makeNewCompleted(displayHabit);
                     habitList.remove(displayHabit);
@@ -148,6 +150,7 @@ public class HabitPage extends AppCompatActivity {
             OutputStreamWriter writer = new OutputStreamWriter(fos);
             Gson gson = new Gson();
             gson.toJson(habitList, writer);
+            //gson.toJson(completedList, writer);
             writer.flush();
 
         } catch (FileNotFoundException e) {
@@ -167,8 +170,18 @@ public class HabitPage extends AppCompatActivity {
     }
 
     public CompletedHabit makeNewCompleted(Habit notComplete) {
-        CompletedHabit completedHabit = new CompletedHabit(notComplete.getTitle(),notComplete.getDays());
+        CompletedHabit completedHabit = new CompletedHabit(notComplete.getTitle(),notComplete.getDaysList());
         completedHabit.setDate(notComplete.getDate());
         return completedHabit;
+    }
+
+    public void displayDays(TextView habitDays) {
+        for (int y=0; y < displayHabit.sizeOfDays(); y++) {
+            String day = displayHabit.getDay(y);
+            SpannableString spanDay = new SpannableString(day);
+            habitDays.append(" ");
+            habitDays.append(spanDay);
+            habitDays.append(", ");
+        }
     }
 }

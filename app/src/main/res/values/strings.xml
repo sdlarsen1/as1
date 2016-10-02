@@ -5,9 +5,9 @@
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="edit_message">What do you need to do?</string>
-    <string name="history">Recent Activity:</string>
+    <string name="history">History:</string>
     <string name="created">Created on:</string>
-    <string name="repeat_on">Repeat on:</string>
+    <string name="repeat_on">History:</string>
     <string name="completed">Habit completed</string>
     <string name="done">Habit Done</string>
     <string name="delete">Delete Habit</string>

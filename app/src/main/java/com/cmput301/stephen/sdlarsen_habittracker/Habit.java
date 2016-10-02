@@ -39,8 +39,15 @@ public abstract class Habit {
         return checkIns;
     }
 
-    public ArrayList getDays() {
+    public String getDay(int index) {
+        return days.get(index);
+    }
+    public ArrayList getDaysList() {
         return days;
+    }
+
+    public int sizeOfDays() {
+        return days.size();
     }
 
     public String getTitle() {
@@ -61,7 +68,8 @@ public abstract class Habit {
     }
 
     public void addToHistory() {
-        historyList.add(new Date());
+        Date theDate = new Date();
+        historyList.add(theDate);
     }
 
     public abstract Boolean isComplete();

@@ -55,12 +55,7 @@ public class HabitPage extends AppCompatActivity {
         loadFromFile();
 
         int index = (int) getIntent().getSerializableExtra("index"); // retrieve habit index
-        Boolean complete = (Boolean) getIntent().getSerializableExtra("complete");
-        if (!complete) {
-            displayHabit = habitList.get(index);
-        } else {
-            // TODO get habit from completedList
-        }
+        displayHabit = habitList.get(index);
 
 
         habitName.setText(displayHabit.getTitle());  // show title
@@ -152,7 +147,6 @@ public class HabitPage extends AppCompatActivity {
 
             // Code taken from http://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylistt
             // on September 22, 2016
-//            Type listType = new TypeToken<ArrayList<Habit>>(){}.getType();
             Type listType = new TypeToken<ArrayList<IncompleteHabit>>(){}.getType();
             habitList = gson.fromJson(in, listType);
 
@@ -172,7 +166,6 @@ public class HabitPage extends AppCompatActivity {
             OutputStreamWriter writer = new OutputStreamWriter(fos);
             Gson gson = new Gson();
             gson.toJson(habitList, writer);
-            //gson.toJson(completedList, writer);
             writer.flush();
 
         } catch (FileNotFoundException e) {

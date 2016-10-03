@@ -1,10 +1,13 @@
 package com.cmput301.stephen.sdlarsen_habittracker;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Parcelable;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.StyleSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,7 +26,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.Serializable;
 import java.lang.reflect.Type;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import static com.cmput301.stephen.sdlarsen_habittracker.R.id.days_view;
 
@@ -47,6 +53,13 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
         Button saveButton = (Button) findViewById(R.id.saveButton);    // Save button
         Button cancelButton = (Button) findViewById(R.id.cancelButton);  // Cancel Button
         TextView daysView = (TextView) findViewById(days_view);  // Initialize view of selected days
+        TextView createdView = (TextView) findViewById(R.id.new_created);
+
+        final String dateString = formatDate();
+        SpannableString spanDate = new SpannableString(dateString);
+        spanDate.setSpan(new StyleSpan(Typeface.BOLD), 0, spanDate.length(), 0);
+        createdView.append(" ");
+        createdView.append(spanDate);
 
         /* On pressing save... */
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +101,6 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
                 showChooseDaysDialog();
             }
         });
-
     }
 
     public void showChooseDaysDialog() {
@@ -113,7 +125,6 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
             // Code taken from http://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylistt
             // on September 22, 2016
             Type listType = new TypeToken<ArrayList<IncompleteHabit>>(){}.getType();
-//            Type listType = new TypeToken<ArrayList<Habit>>(){}.getType();
             habitList = gson.fromJson(in, listType);
 
         } catch (FileNotFoundException e) {
@@ -141,6 +152,13 @@ public class NewHabit extends AppCompatActivity implements  ChooseDaysDialogFrag
             // TODO Auto-generated catch block
             throw new RuntimeException();
         }
+    }
+
+    public String formatDate() {
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        Date theDate = new Date();
+        String dateString = df.format(theDate);
+        return dateString;
     }
 
 }

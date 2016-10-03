@@ -56,10 +56,8 @@ public class MainActivity extends AppCompatActivity {
         oldHabitList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Boolean complete = Boolean.FALSE;
                 Intent intent = new Intent(MainActivity.this, HabitPage.class);
                 intent.putExtra("index", position);
-                intent.putExtra("complete", complete);
                 startActivity(intent);
             }
         });
@@ -88,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
 
             // Code taken from http://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylistt
             // on September 22, 2016
-//            Type listType = new TypeToken<ArrayList<Habit>>(){}.getType();
             Type listType = new TypeToken<ArrayList<IncompleteHabit>>(){}.getType();
             habitList = gson.fromJson(in, listType);
 

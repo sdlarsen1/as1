@@ -3,66 +3,84 @@
 
     <item
         is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_71b9fe780b5b5394f38087bd013b237e168c0e93.jar" />
+        sha1="533cb5a419744b2fd2bf8cace0b26bdc76da750c">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_41da4e21770a00f6770e1ea4f088e85ab36fd847.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appindexing-8.4.0_b2f45a54f2650019be88f091ed5ef955f1aae5e2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_dd289f4f28383eaa0c14cfe4fd0d91353a8f705e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_af9c86465b5bf5defc6d37a40ee26fab1cdb2643.jar" />
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_2fbaff3a95080537726044e143f7e27f5660e10a.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_595097b5f5451aa1555d7dadafbb9e12818aec54.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_191f0d5e55ae2c21e7eb3f2ab721fba4cd459918.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_995ec3d8462df6f878c9ca13b3d561694ca0ac64.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_b430fa1004e77a92030d8cb03fd99a919bb635b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_a6d0840a814f20ceaa6e430d2cd628637d96f29d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_d554bf02cecb11f82910a397378318cf9a016918.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_0cb891991fc8ef449528184cd452a35eb6179512.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fd02b8a94c31406e76817ccd32cc35f4bc00523f">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/instant-run_10dcbf1ef3f2c1859299c3a5525c9569c63252dc.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_bb2027686edbdfa0eb3248c5bae2017bb65798d6.jar" />
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_020cc69ec93ff4fbcebed208356a3ace6173370e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -71,25 +89,7 @@
         optimize="true"
         revision="24.0.2"
         sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.1_70341ece7ba22be37aa582419d11c830553e68c0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_f3744b0d5beed6072f3e7a8dcc3d285e0ae7007d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_a009ba79a4689e838c72a1ebf5e61dc6074c5bc1.jar" />
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.1_70341ece7ba22be37aa582419d11c830553e68c0.jar" />
     </item>
     <item
         is-multidex="false"
@@ -98,97 +98,97 @@
         optimize="true"
         revision="24.0.2"
         sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/gson-2.7_43ea7f116ae7db109a597ac5dccea8d32b1d62e4.jar" />
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/gson-2.7_43ea7f116ae7db109a597ac5dccea8d32b1d62e4.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_416c415776fdbdd9ff3e3ce7d2746a2ea6c6aee6.jar" />
+        sha1="65a4392a0c372ac29c1c1ab12a33bb4edbf4028f">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/instant-run_1d3a2b1525cda7eeb666a089a1463f8999be14ae.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_03117e1f1d450d1a79840391be97585e364400b8.jar" />
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_45f454d445c331a2651edadd248c4df11700f6c8.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_1e65bc799dd85abbc932affef3de84e337b181eb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-8.4.0_594ed4b6ce2bcb78f2bb41c174392ac96290a51f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_8de22c0ee595f32c55fa396c11302677f3575ce5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_33f5a648491f718a86d198df6eaf9205d24db422.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-8.4.0_4bf89f82d47a65b4931d70c33d7d71619d39fadd.jar" />
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-8.4.0_eb2dec7441ff1804c8c8029bca318dc14abc7b8f.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_b977f93f3361dc0736a72360599d4edf1dee6b8d.jar" />
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_03f2c586d427ab2f19ff8db056d120bc6fa6a0ee.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="29cd4941de7c3a6b432965b680c94843c2b504b8">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_89e18ed939071c6d03a58423415c2745d0d5e665.jar" />
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appindexing-8.4.0_74f209f0b2ff3ee6b86da793fe2827d10e763e7e.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/stephen/Documents/301/as1/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/Users/stephen/Documents/301/as1/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_76743eadfcbddf996252d32d1de4e42ab35f07ed.jar" />
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_3667a2b208ea8ab455aec2b539234a3ff1aa649b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_83207b2ad2b2cef3a865bd0afd4fa02e690b22b5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_4fff80a11d57cf0637a96d14a66e9bcbf40b1f23.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-8.4.0_df050eecb38acae8f52e4db029854b889368a1c0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/stephen/Documents/301/as1/src/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/stephen/Documents/301/as1/src/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_7a54c98014214836eb3a69a981fb5ed9a1872167.jar" />
     </item>
 
 </items>

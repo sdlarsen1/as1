@@ -16,6 +16,14 @@
         android:hint="@string/edit_message"
         android:layout_weight="0.32" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/new_created"
+        android:layout_weight="0.04"
+        android:textSize="10pt"
+        android:text="@string/created" />
+
 
     <TextView
         android:layout_width="match_parent"

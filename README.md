@@ -5,7 +5,7 @@ Copyright Stephen Larsen (sdlarsen@ualberta.ca)
 
 Uses the Apache 2.0 License.
 
-Basic electronic To-Do list for CMPUT 301 Assignment 1. Does not have full functionality.
+Basic electronic To-Do list for CMPUT 301 Assignment 1. Compiled using API level 18
 
 as1/bin/ # this contains the compiled APK file to be evaluated
 as1/doc/ # this contains the UML class diagram image file(s)

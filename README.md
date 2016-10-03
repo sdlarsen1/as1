@@ -9,7 +9,7 @@ Basic electronic To-Do list for CMPUT 301 Assignment 1. Does not have full funct
 
 as1/bin/ # this contains the compiled APK file to be evaluated
 as1/doc/ # this contains the UML class diagram image file(s)
-as1/app/src/ # this contains the code base
+as1/src # this contains the code base
 
 Screencap video of app functionality at https://ia601504.us.archive.org/3/items/as1-recording/as1-recording.mov
 
